@@ -14,32 +14,31 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.google.gson.Gson;
 
-import br.com.bara.application.web_service.dao.StatusDao;
 import br.com.bara.application.web_service.domain.Status;
+import br.com.bara.application.web_service.repository.StatusRepository;
 
 @Path("status")
 public class StatusResource {
 
-	private StatusDao statusDao;
-	
-	public StatusResource() {
-		this.statusDao = new StatusDao();
-	}
+	@Autowired
+	private StatusRepository statusDao;
 	
 	@GET
 	@Path("/{statusID}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Status getStatusForID(@PathParam("statusID") String statusID){
-		return this.statusDao.obterPorId(Long.parseLong(statusID));
+		return this.statusDao.findOne(Long.parseLong(statusID));
 	}
 	
 	@GET
 	@Path("/")
 	@Produces("application/json")
 	public String getListStatus(){
-		return new Gson().toJson(this.statusDao.listarTodos());
+		return new Gson().toJson(this.statusDao.findAll());
 	}
 	
 	@POST
@@ -47,7 +46,7 @@ public class StatusResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String salvarStatus(Status status){
-		return new Gson().toJson(this.statusDao.salvar(status));
+		return new Gson().toJson(this.statusDao.save(status));
 	}
 	
 	@PUT
@@ -55,13 +54,13 @@ public class StatusResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String editarStatus(Status status){
-		return new Gson().toJson(this.statusDao.salvar(status));
+		return new Gson().toJson(this.statusDao.save(status));
 	}
 	
 	@DELETE
 	@Path("/{statusID}")
 	public Response deleteStatus(@PathParam("statusID") String statusID) throws URISyntaxException{
-	     this.statusDao.deletar(Long.parseLong(statusID));
+	     this.statusDao.delete(Long.parseLong(statusID));
 	     return Response.status(200).entity("Status com " + statusID + " foi removido com sucesso!").build();
 	}
 	

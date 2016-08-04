@@ -1,4 +1,4 @@
-package br.com.bara.web_service.infraestrutura;
+package br.com.bara.web_service.infraestrutura.service_root;
 
 import java.util.HashSet;
 import java.util.Set;

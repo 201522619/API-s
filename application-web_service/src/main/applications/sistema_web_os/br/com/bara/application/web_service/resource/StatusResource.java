@@ -29,21 +29,21 @@ public class StatusResource {
 	}
 	
 	@GET
-	@Path("get/{statusID}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Path("/{statusID}")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Status getStatusForID(@PathParam("statusID") String statusID){
 		return this.statusDao.obterPorId(Long.parseLong(statusID));
 	}
 	
 	@GET
-	@Path("get/listarTodosStatus")
+	@Path("/")
 	@Produces("application/json")
 	public String getListStatus(){
 		return new Gson().toJson(this.statusDao.listarTodos());
 	}
 	
 	@POST
-	@Path("post/save")
+	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String salvarStatus(Status status){
@@ -51,7 +51,7 @@ public class StatusResource {
 	}
 	
 	@PUT
-	@Path("put/update")
+	@Path("/{statusID}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String editarStatus(Status status){
@@ -59,7 +59,7 @@ public class StatusResource {
 	}
 	
 	@DELETE
-	@Path("delete/{statusID}")
+	@Path("/{statusID}")
 	public Response deleteStatus(@PathParam("statusID") String statusID) throws URISyntaxException{
 	     this.statusDao.deletar(Long.parseLong(statusID));
 	     return Response.status(200).entity("Status com " + statusID + " foi removido com sucesso!").build();

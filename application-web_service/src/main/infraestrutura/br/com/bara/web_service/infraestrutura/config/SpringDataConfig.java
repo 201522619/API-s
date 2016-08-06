@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories(basePackages = "br.com.bara.application.web_service.repository")
 @EnableTransactionManagement
-@PropertySource("classpath:/application.properties")
+@PropertySource("classpath:application.properties")
 public class SpringDataConfig {
 
 	@Value(value = "${jdbc.user}")

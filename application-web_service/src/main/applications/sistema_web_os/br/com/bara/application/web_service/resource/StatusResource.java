@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
@@ -22,6 +23,7 @@ import br.com.bara.application.web_service.domain.Status;
 import br.com.bara.application.web_service.repository.StatusRepository;
 
 @Path("status")
+@Service
 public class StatusResource {
 
 	@Autowired

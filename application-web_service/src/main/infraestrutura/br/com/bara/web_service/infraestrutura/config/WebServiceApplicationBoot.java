@@ -1,4 +1,4 @@
-package br.com.bara.application.web_service;
+package br.com.bara.web_service.infraestrutura.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

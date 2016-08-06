@@ -19,17 +19,14 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
-import br.com.bara.application.web_service.domain.Status;
-import br.com.bara.application.web_service.repository.StatusRepository;
-
 @Path("status")
 @Service
 public class StatusResource {
 
-	@Autowired
-	private StatusRepository statusDao;
+	/*@Autowired
+	private StatusRepository statusDao;*/
 	
-	@GET
+	/*@GET
 	@Path("/{statusID}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Status getStatusForID(@PathParam("statusID") String statusID){
@@ -64,7 +61,7 @@ public class StatusResource {
 	public Response deleteStatus(@PathParam("statusID") String statusID) throws URISyntaxException{
 	     this.statusDao.delete(Long.parseLong(statusID));
 	     return Response.status(200).entity("Status com " + statusID + " foi removido com sucesso!").build();
-	}
+	}*/
 	
 	
 	

@@ -2,6 +2,9 @@ package br.com.bara.application.web_service.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.bara.web_service.infraestrutura.domain.GenericDomain;
@@ -35,6 +38,10 @@ public class Endereco extends GenericDomain{
 
 	@Column(name = "end_uf")
 	private String uf;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "cliente_id", nullable = false)
+	private Cliente cliente;
 
 	public String getTipo() {
 		return tipo;

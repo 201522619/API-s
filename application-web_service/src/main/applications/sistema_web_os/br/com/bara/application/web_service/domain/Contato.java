@@ -2,6 +2,9 @@ package br.com.bara.application.web_service.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.bara.web_service.infraestrutura.domain.GenericDomain;
@@ -26,6 +29,10 @@ public class Contato extends GenericDomain{
 	
 	@Column(name = "contato_obs")
 	private String obs;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "cliente_id", nullable = true)
+	private Cliente cliente;
 
 	public String getTipo() {
 		return tipo;

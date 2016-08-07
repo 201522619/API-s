@@ -136,6 +136,16 @@ public class Conta extends GenericDomain{
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [status=" + status + ", tipoConta=" + tipoConta
+				+ ", nome=" + nome + ", saldoInicial=" + saldoInicial
+				+ ", dataInicial=" + dataInicial + ", codigoBanco="
+				+ codigoBanco + ", agencia=" + agencia + ", conta=" + conta
+				+ ", valorLimite=" + valorLimite + ", contato=" + contato
+				+ ", telefone=" + telefone + "]";
+	}
 	
 	
 

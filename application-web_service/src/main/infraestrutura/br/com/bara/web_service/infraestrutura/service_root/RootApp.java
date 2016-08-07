@@ -1,14 +1,6 @@
 package br.com.bara.web_service.infraestrutura.service_root;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-
-import br.com.bara.application.web_service.resource.StatusResource;
-
-@ApplicationPath("root")
+/*@ApplicationPath("root")
 public class RootApp extends Application {
 
 	@Override
@@ -19,10 +11,8 @@ public class RootApp extends Application {
 	}
 	
 	public void addRestResourceClasses(Set<Class<?>> resources){
-		resources.add(StatusResource.class);
+		resources.add(ContaResource.class);
 		//Adicionar aqui as outras classes de resource.
 	}
-	
-	
+}*/
 
-}

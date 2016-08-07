@@ -1,4 +1,4 @@
-package br.com.bara.web_service.infraestrutura.config;
+package br.com.bara.application.web_service.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;

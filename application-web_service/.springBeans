@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:br.com.bara.web_service.infraestrutura.config.WebServiceApplicationBoot</config>
+		<config>java:br.com.bara.application.web_service.WebServiceApplicationBoot</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

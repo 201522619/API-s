@@ -35,8 +35,7 @@ public class ContaBusinessImpl implements ContaBusiness{
 		
 	}
 	
-	@Override
-	public List<Conta> findAll(){
+	private List<Conta> findAll(){
 		try {
 			return (List<Conta>) contaRepository.findAll();
 		} catch (RuntimeException e) {
@@ -45,7 +44,8 @@ public class ContaBusinessImpl implements ContaBusiness{
 	}
 	
 	@Override
-	public ResponseEntity<List<Conta>> consistirTodasContas(List<Conta> contas){
+	public ResponseEntity<List<Conta>> consistirTodasContas(){
+		List<Conta> contas = findAll();
 		if(contas.isEmpty()){
 			return new ResponseEntity<List<Conta>>(HttpStatus.NO_CONTENT);
 		}else{
@@ -53,8 +53,7 @@ public class ContaBusinessImpl implements ContaBusiness{
 		}
 	}
 	
-	@Override
-	public Conta findOne(Long id){
+	private Conta findOne(Long id){
 		try {
 			return contaRepository.findOne(id);
 		} catch (RuntimeException e) {
@@ -80,7 +79,8 @@ public class ContaBusinessImpl implements ContaBusiness{
 
 
 	@Override
-	public ResponseEntity<Conta> consistirPorId(Conta conta) {
+	public ResponseEntity<Conta> consistirPorId(Long id) {
+		Conta conta = findOne(id);
 		if(conta == null){
 			return new ResponseEntity<Conta>(HttpStatus.NOT_FOUND);
 		}else{

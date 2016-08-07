@@ -10,14 +10,10 @@ public interface ContaBusiness {
 	
 	ResponseEntity<Conta> consistirConta(Conta conta);
 	
-	List<Conta> findAll();
-	
-	Conta findOne(Long id);
-	
 	ResponseEntity<Conta> consistirRemoverConta(Long id);
 	
-	ResponseEntity<List<Conta>> consistirTodasContas(List<Conta> contas);
+	ResponseEntity<List<Conta>> consistirTodasContas();
 	
-	ResponseEntity<Conta> consistirPorId(Conta conta);
+	ResponseEntity<Conta> consistirPorId(Long id);
 	
 }

@@ -22,9 +22,8 @@ public class ContaResource {
 	private ContaBusiness contaBusiness;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = APPLICATION_JSON)
-	public ResponseEntity<List<Conta>> listarTodos(){
-		List<Conta> contas = contaBusiness.findAll();
-		return contaBusiness.consistirTodasContas(contas);
+	public ResponseEntity<List<Conta>> listarTodasContas(){
+		return contaBusiness.consistirTodasContas();
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST, produces = APPLICATION_JSON)
@@ -33,9 +32,8 @@ public class ContaResource {
 	}
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.GET, produces = APPLICATION_JSON)
-	public ResponseEntity<Conta> procurarPeloId(@PathVariable final Long id){
-		Conta conta = contaBusiness.findOne(id);
-		return contaBusiness.consistirPorId(conta);
+	public ResponseEntity<Conta> procurarContaPeloId(@PathVariable final Long id){
+		return contaBusiness.consistirPorId(id);
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.PUT, produces = APPLICATION_JSON)
@@ -44,7 +42,7 @@ public class ContaResource {
 	}
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE, produces = APPLICATION_JSON)
-	public ResponseEntity<Conta> deletar(@RequestBody @PathVariable final Long id){
+	public ResponseEntity<Conta> deletarConta(@RequestBody @PathVariable final Long id){
 		return contaBusiness.consistirRemoverConta(id);
 	}
 

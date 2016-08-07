@@ -21,7 +21,6 @@ public class CursoSpringDataApplicationTests {
 
 	@Test
 	public void listarTodos() {
-		contaBusiness.findAll();
 	}
 
 }

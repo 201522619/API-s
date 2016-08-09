@@ -21,12 +21,12 @@ public class ContaResource {
 	@Autowired
 	private ContaBusiness contaBusiness;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = APPLICATION_JSON)
+	@RequestMapping(method = RequestMethod.GET, produces = APPLICATION_JSON)
 	public ResponseEntity<List<Conta>> listarTodasContas(){
 		return contaBusiness.consistirTodasContas();
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST, produces = APPLICATION_JSON)
+	@RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON)
 	public ResponseEntity<Conta> salvarConta(@RequestBody Conta conta){
 		return contaBusiness.consistirConta(conta);
 	}
@@ -36,7 +36,7 @@ public class ContaResource {
 		return contaBusiness.consistirPorId(id);
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.PUT, produces = APPLICATION_JSON)
+	@RequestMapping(method = RequestMethod.PUT, produces = APPLICATION_JSON)
 	public ResponseEntity<Conta> editarConta(@RequestBody Conta conta){
 		return contaBusiness.consistirConta(conta);
 	}

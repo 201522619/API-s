@@ -22,17 +22,17 @@ public class ClienteResource {
 	@Autowired
 	private ClienteBusiness clienteBusiness;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = APLICATION_JSON)
+	@RequestMapping(method = RequestMethod.GET, produces = APLICATION_JSON)
 	public ResponseEntity<List<Cliente>> listarTodosClientes(){
 		return clienteBusiness.consistirTodosClientes();
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST, produces = APLICATION_JSON)
+	@RequestMapping(method = RequestMethod.POST, produces = APLICATION_JSON)
 	public ResponseEntity<Void> salvarCliente(Cliente cliente){
 		return clienteBusiness.consistirCliente(cliente);
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.PUT, produces = APLICATION_JSON)
+	@RequestMapping(method = RequestMethod.PUT, produces = APLICATION_JSON)
 	public ResponseEntity<Void> editarCliente(Cliente cliente){
 		return clienteBusiness.consistirCliente(cliente);
 	}

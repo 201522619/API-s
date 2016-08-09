@@ -21,7 +21,7 @@ public class ContatoResource {
 	@Autowired
 	private ContatoBusiness contatoBusiness;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = APLICATION_JSON)
+	@RequestMapping(method = RequestMethod.GET, produces = APLICATION_JSON)
 	public ResponseEntity<List<Contato>> listarTodosContatos(){
 		return contatoBusiness.consistirTodosContatos();
 	}

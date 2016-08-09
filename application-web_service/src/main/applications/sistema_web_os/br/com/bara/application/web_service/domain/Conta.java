@@ -18,6 +18,7 @@ public class Conta extends GenericDomain{
 	@Column(name = "cont_status")
 	private String status;
 	
+	//Conta Corrente, Dinheiro, Poupança, cartão de crédito, ativo(património), passivo(dívida)
 	@Column(name = "cont_tipo_conta")
 	private String tipoConta;
 	
@@ -43,12 +44,6 @@ public class Conta extends GenericDomain{
 	@Column(name = "cont_valor_limite")
 	private BigDecimal valorLimite;
 	
-	@Column(name = "cont_contato")
-	private String contato;
-	
-	@Column(name = "cont_telefone")
-	private String telefone;
-
 	public String getStatus() {
 		return status;
 	}
@@ -121,31 +116,6 @@ public class Conta extends GenericDomain{
 		this.valorLimite = valorLimite;
 	}
 
-	public String getContato() {
-		return contato;
-	}
-
-	public void setContato(String contato) {
-		this.contato = contato;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	@Override
-	public String toString() {
-		return "Conta [status=" + status + ", tipoConta=" + tipoConta
-				+ ", nome=" + nome + ", saldoInicial=" + saldoInicial
-				+ ", dataInicial=" + dataInicial + ", codigoBanco="
-				+ codigoBanco + ", agencia=" + agencia + ", conta=" + conta
-				+ ", valorLimite=" + valorLimite + ", contato=" + contato
-				+ ", telefone=" + telefone + "]";
-	}
 	
 	
 

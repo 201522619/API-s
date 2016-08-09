@@ -101,9 +101,9 @@ public class ClienteBusinessImpl implements ClienteBusiness{
 		try {
 			Cliente cliente = procurarPeloId(id);
 			if(cliente != null){
-				return new ResponseEntity<Cliente>(cliente, HttpStatus.NOT_FOUND);
-			}else{
 				return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
+			}else{
+				return new ResponseEntity<Cliente>(cliente, HttpStatus.NOT_FOUND);
 			}
 		} catch (RuntimeException e) {
 			throw new RuntimeException(e.getMessage() + " in the "+getClass().getSimpleName());

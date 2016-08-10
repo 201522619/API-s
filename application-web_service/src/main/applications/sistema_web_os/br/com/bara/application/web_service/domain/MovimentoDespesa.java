@@ -5,11 +5,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.com.bara.application.web_service.type.ETipoRepeticao;
 import br.com.bara.web_service.infraestrutura.domain.GenericDomain;
 
 @Entity
@@ -36,10 +39,11 @@ public class MovimentoDespesa extends GenericDomain {
 	private Date data_pagamento;
 
 	@Column(name = "mov_despesa_pago")
-	private boolean pago;
+	private String pago;
 
 	@Column(name = "mov_despesa_tipo_repeticao")
-	private String tipoRepeticao;
+	@Enumerated(EnumType.STRING)
+	private ETipoRepeticao tipoRepeticao;
 
 	@Column(name = "mov_despesa_qtde_parcelas")
 	private Long quantidade_parcelas;
@@ -47,6 +51,7 @@ public class MovimentoDespesa extends GenericDomain {
 	@Column(name = "mov_despesa_obs")
 	private String obs;
 
+	//Não, Sim, Sim avise-me por email
 	@Column(name = "mov_despesa_importante")
 	private String importante;
 
@@ -90,22 +95,6 @@ public class MovimentoDespesa extends GenericDomain {
 		this.data_pagamento = data_pagamento;
 	}
 
-	public boolean isPago() {
-		return pago;
-	}
-
-	public void setPago(boolean pago) {
-		this.pago = pago;
-	}
-
-	public String getTipoRepeticao() {
-		return tipoRepeticao;
-	}
-
-	public void setTipoRepeticao(String tipoRepeticao) {
-		this.tipoRepeticao = tipoRepeticao;
-	}
-
 	public Long getQuantidade_parcelas() {
 		return quantidade_parcelas;
 	}
@@ -129,5 +118,23 @@ public class MovimentoDespesa extends GenericDomain {
 	public void setImportante(String importante) {
 		this.importante = importante;
 	}
+
+	public String getPago() {
+		return pago;
+	}
+
+	public void setPago(String pago) {
+		this.pago = pago;
+	}
+
+	public ETipoRepeticao getTipoRepeticao() {
+		return tipoRepeticao;
+	}
+
+	public void setTipoRepeticao(ETipoRepeticao tipoRepeticao) {
+		this.tipoRepeticao = tipoRepeticao;
+	}
+	
+	
 
 }

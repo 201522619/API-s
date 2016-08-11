@@ -15,7 +15,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "br.com.bara.application.web_service.repository")
@@ -73,4 +72,5 @@ public class SpringDataConfig {
 		dataSource.setUrl(this.url);
 		return dataSource;
 	}
+	
 }

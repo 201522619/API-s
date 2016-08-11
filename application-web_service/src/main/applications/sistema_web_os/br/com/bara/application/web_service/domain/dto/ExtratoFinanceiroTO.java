@@ -3,7 +3,6 @@ package br.com.bara.application.web_service.domain.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
-
 public class ExtratoFinanceiroTO {
 	
 	private String lancamento;

@@ -2,13 +2,16 @@ package br.com.bara.application.web_service.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import br.com.bara.application.web_service.type.ETipoRepeticao;
 import br.com.bara.web_service.infraestrutura.domain.GenericDomain;
 
@@ -19,11 +22,11 @@ public class MovimentoReceita extends GenericDomain{
 	private static final long serialVersionUID = -46455698894729473L;
 	
 	@OneToOne(fetch = FetchType.EAGER)
-	@Column(name = "mov_receita_tipo_receita")
+	@JoinColumn(name = "tipo_receita_id")
 	private TipoReceita tipoReceita;
 	
 	@OneToOne(fetch = FetchType.EAGER)
-	@Column(name = "mov_receita_tipo_recebimento")
+	@JoinColumn(name = "tipo_recebimento_id")
 	private TipoRecebimento tipoRecebimento;
 	
 	@Column(name = "mov_receita_valor")

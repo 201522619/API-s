@@ -3,20 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="../angular/js/angular/angular.js"></script>
 <script type="text/javascript" src="../angular/js/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="../bootstrap/dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="../bootstrap/grunt/bs-glyphicons-data-generator.js"></script>
-<script type="text/javascript" src="../jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="../controller/appController.js"></script>
 
-<link href="../bootstrap/dist/css/bootstrap.css">
-<link href="../bootstrap/dist/css/bootstrap-theme.css">
-<link href="../angular/js/angular/angular-csp.css">
 <!-- http://marketplace.eclipse.org/content/angularjs-eclipse#.VCmjT9WUeZU -->
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body ng-controller="appController as control">
-	<h1>{{control.title}}</h1>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">$Dinheiro</a>
+			</div>
+			
+			<ul ng-repeat="c in control.contas">
+				<li>{{c}}</li>
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span>Felipe Miguel dos Santos</a></li>
+			</ul>
+		</div>
+	</nav>
 </body>
 </html>

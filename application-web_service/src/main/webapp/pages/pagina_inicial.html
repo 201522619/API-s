@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="application">
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>$Dinheiro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="../angular/js/angular/angular.js"></script>
+<script type="text/javascript" src="../angular/js/angular-resource/angular-resource.js"></script>
 <script type="text/javascript" src="../angular/js/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="../controller/appController.js"></script>
+
+<script type="text/javascript" src="../controller/app.js"></script>
+<script type="text/javascript" src="../controller/crudRestApplication.js"></script>
+<script type="text/javascript" src="../controller/controllers.js"></script>
 
 <!-- http://marketplace.eclipse.org/content/angularjs-eclipse#.VCmjT9WUeZU -->
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body ng-controller="appController as control">
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">$Dinheiro</a>
+<body ng-controller="controller as control">
+	<ul ng-repeat="c in control.clientes">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">$Dinheiro</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span>{{c.cpf}}</a></li>
+				</ul>
 			</div>
-			
-			<ul ng-repeat="c in control.contas">
-				<li>{{c}}</li>
-			</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>Felipe Miguel dos Santos</a></li>
-			</ul>
-		</div>
-	</nav>
+		</nav>
+	</ul>
 </body>
 </html>

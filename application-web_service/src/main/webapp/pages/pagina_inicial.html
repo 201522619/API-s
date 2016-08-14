@@ -20,7 +20,7 @@
 
 </head>
 <body ng-controller="controller as control">
-	
+
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -32,30 +32,255 @@
 				</ul>
 			</div>
 		</nav>
-	<table class="table" ng-show="control.clientes.length > 0">
-		<thead>
-			<th>Nome</th>
-			<th>CPF</th>
-		</thead>
-		<tbody ng-repeat="c in control.clientes">
-			<td>{{c.nome}}</td>
-			<td>{{c.cpf}}</td>
-		</tbody>
-	</table>	
-	
-	<form>
-		<div class="form-group">
-		    <label for="nomeID">Nome</label>
-		    <input type="text" class="form-control" ng-model="cliente.nome" id="nomeID" placeholder="Nome">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				  		<div class="row">
+				  			<div class="col-md-8" style="font-size: 12px;">
+				  				Despesas pagas
+				  			</div>
+				  			<div class="col-md-4 label label-danger">
+				  				<div style="position: relative;text-align: right;font-size: 10px;">
+				  					Agosto / 2016
+				  			   </div>
+				  			</div>
+				  		</div>
+				  </div>
+				  <div class="panel-body">
+              <div class="row">
+                  <div class="col-md-12">
+                    <div style="font-size: 25px;">R$: 0,00</div>
+                  </div>
+                  <div class="col-md-9" style="font-size: 12px;">
+                    Todas do mês: R$: 0,00
+                  </div>
+                  <div class="col-md-3" style="font-size: 12px;">
+                    0,00%
+                  </div>
+              </div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				 	 <div class="row">
+				  		<div class="col-md-8" style="font-size: 12px;">
+				  				Despesas não pagas
+				  		</div>
+				  		<div class="col-md-4 label label-danger">
+				  			   <div style="position: relative;text-align: left;font-size: 10px;">
+				  					Agosto / 2016
+				  			   </div>
+				  		</div>
+				  	  </div>
+				  </div>
+				  <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                  <div style="font-size: 25px;">R$: 0,00</div>
+                </div>
+                <div class="col-md-9" style="font-size: 12px;">
+                  Todas do mês: R$: 0,00
+                </div>
+                <div class="col-md-3" style="font-size: 12px;">
+                  0,00%
+                </div>
+            </div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				  	 <div class="row">
+				  		<div class="col-md-8" style="font-size: 12px;">
+				  				Receitas recebidas
+				  		</div>
+				  		<div class="col-md-4 label label-primary">
+				  				<div style="position: relative;text-align: left;font-size: 10px;">
+				  					Agosto / 2016
+				  			   </div>
+				  		</div>
+				  	  </div>
+				  </div>
+				  <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                  <div style="font-size: 25px;">R$: 0,00</div>
+                </div>
+                <div class="col-md-9" style="font-size: 12px;">
+                  Todas do mês: R$: 0,00
+                </div>
+                <div class="col-md-3" style="font-size: 12px;">
+                  0,00%
+                </div>
+            </div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				  	 <div class="row">
+				  		<div class="col-md-8" style="font-size: 12px;">
+				  				Receitas não recebidas
+				  		</div>
+				  		<div class="col-md-4 label label-primary">
+				  				<div style="position: relative;text-align: left;font-size: 10px;">
+				  					Agosto / 2016
+				  			   </div>
+				  		</div>
+				  	  </div>
+				  </div>
+				  <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                  <div style="font-size: 25px;">R$: 0,00</div>
+                </div>
+                <div class="col-md-9" style="font-size: 12px;">
+                  Todas do mês: R$: 0,00
+                </div>
+                <div class="col-md-3" style="font-size: 12px;">
+                  0,00%
+                </div>
+            </div>
+				  </div>
+				</div>
+			</div>
 		</div>
-		<div class="form-group">
-		    <label for="cpfID">cpf</label>
-		    <input type="text" class="form-control" ng-model="cliente.cpf" id="cpfID" placeholder="CPF">
-		</div>
-		<div>
-			<button class="btn btn-default" ng-click="control.salvar(cliente)">Salvar</button>
-		</div>
-	</form>
-	
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-2">
+            Resumo de lançamentos
+          </div>
+          <div class="col-md-10">
+            <div class="label label-default" style="position: relative;text-left: right;font-size: 10px;">
+              Agosto / 2016
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table">
+              <thead>
+                <th>Categoria de despesas</th>
+                <th>Valor</th>
+              </thead>
+              <tbody>
+                <td>Alimentação</td>
+                <td>
+                  <div class="label label-danger">
+                      R$: 500,00
+                  </div>
+               </td>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <table class="table">
+              <thead>
+                <th>Tipo de receitas</th>
+                <th>Valor</th>
+              </thead>
+              <tbody>
+                <td>Salário</td>
+                <td>
+                  <div class="label label-primary">
+                      R$: 2.500,00
+                  </div>
+                </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-4">
+                Depesas por categorias
+              </div>
+              <div class="col-md-8">
+                <div class="label label-danger" style="position: relative;text-right: right;font-size: 10px;">
+                  Agosto / 2016
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <!-- Gráfico-->
+          </div>
+       </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-4">
+                 Receitas por tipo
+              </div>
+              <div class="col-md-8">
+                <div class="label label-primary" style="position: relative;text-right: right;font-size: 10px;">
+                  Agosto / 2016
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+              <!-- Gráfico-->
+          </div>
+       </div>
+      </div>
+   </div>
+
+
+   <div class="row">
+     <div class="col-md-6">
+       <div class="panel panel-default">
+        <div class="panel-heading">Despesas vencidas ou a vencer</div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+                <th>Tipo</th>
+                <th>Venc.</th>
+                <th>Valor</th>
+                <th></th>
+            </thead>
+          </table>
+        </div>
+      </div>
+     </div>
+     <div class="col-md-6">
+       <div class="panel panel-default">
+        <div class="panel-heading">receitas a vencer</div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+                <th>Tipo</th>
+                <th>Venc.</th>
+                <th>Valor</th>
+                <th></th>
+            </thead>
+          </table>
+        </div>
+      </div>
+     </div>
+   </div>
+
+	</div>
+
 </body>
 </html>
